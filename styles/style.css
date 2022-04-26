@@ -4,6 +4,41 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-body{
-    background-color: rgb(235, 223, 235);
+body {
+  background-color: rgb(235, 223, 235);
+}
+.watch {
+  width: 550px;
+  height: 230px;
+  margin: 200px auto;
+  border-radius: 7px;
+}
+
+.time,
+.buttons {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  padding: 5px 0px;
+}
+.timer {
+  font-size: 90px;
+  font-weight: bold;
+}
+.button {
+  display: inline-block;
+  border: none;
+  padding: 20px 50px;
+  border-radius: 25px;
+  margin: 0px 5px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.199),
+    -3px -5px 10px 5px rgba(255, 255, 255, 0.429);
+  transition: all 0.5s;
+}
+
+.button:hover {
+  background-color: red;
+  color: #fff;
 }
