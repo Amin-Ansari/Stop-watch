@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll("button");
 let timeList = ["00", "00", "00"];
 var num = 0;
 var timeInterval;
-
+console.log(timeInterval);
 function timeShow() {
   if (Number(timeList[2]) == 60) {
     minuteAdd();
@@ -49,7 +49,10 @@ function hourAdd() {
 }
 
 buttons[0].addEventListener("click", function () {
-  timeInterval = setInterval(seccondAdd, 1000);
+  if (!timeInterval) {
+    timeInterval = setInterval(seccondAdd, 1000);
+  } else {
+  }
 });
 
 buttons[1].addEventListener("click", function () {
