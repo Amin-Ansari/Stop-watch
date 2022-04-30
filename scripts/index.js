@@ -60,6 +60,7 @@ buttons[1].addEventListener("click", function () {
 });
 buttons[2].addEventListener("click", function () {
   clearInterval(timeInterval);
+  timeInterval = undefined;
   for (let i = 0; i < timeList.length; i++) {
     timeList[i] = "00";
   }
