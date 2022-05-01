@@ -51,12 +51,13 @@ function hourAdd() {
 buttons[0].addEventListener("click", function () {
   if (!timeInterval) {
     timeInterval = setInterval(seccondAdd, 1000);
-  } else {
   }
 });
 
 buttons[1].addEventListener("click", function () {
-  clearInterval(timeInterval);
+  if (timeInterval) {
+    clearInterval(timeInterval);
+  }
 });
 buttons[2].addEventListener("click", function () {
   clearInterval(timeInterval);
