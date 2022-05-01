@@ -13,7 +13,13 @@ function timeShow() {
   }
   timerElement.innerHTML = timeList.join(" : ");
 }
-
+function pauseChange() {
+  if (buttons[0].innerHTML == "Start") {
+    buttons[0].innerHTML = "Continue";
+  } else {
+    buttons[0].innerHTML = "Start";
+  }
+}
 function seccondAdd() {
   num = 0;
   if (timeList[2] < 9) {
@@ -58,6 +64,7 @@ buttons[1].addEventListener("click", function () {
   if (timeInterval) {
     clearInterval(timeInterval);
   }
+  pauseChange();
 });
 buttons[2].addEventListener("click", function () {
   clearInterval(timeInterval);
