@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll("button");
 let timeList = ["00", "00", "00"];
 var num = 0;
 var timeInterval;
-console.log(timeInterval);
+var lastTimeInterval;
 function timeShow() {
   if (Number(timeList[2]) == 60) {
     minuteAdd();
@@ -14,10 +14,12 @@ function timeShow() {
   timerElement.innerHTML = timeList.join(" : ");
 }
 function pauseChange() {
-  if (buttons[0].innerHTML == "Start") {
-    buttons[0].innerHTML = "Continue";
-  } else {
-    buttons[0].innerHTML = "Start";
+  if (timeInterval) {
+    if (buttons[0].innerHTML == "Start") {
+      buttons[0].innerHTML = "Continue";
+    } else {
+      buttons[0].innerHTML = "Start";
+    }
   }
 }
 function seccondAdd() {
@@ -62,7 +64,11 @@ buttons[0].addEventListener("click", function () {
 
 buttons[1].addEventListener("click", function () {
   if (timeInterval) {
+    lastTimeInterval = "lol";
     clearInterval(timeInterval);
+  } else if (lastTimeInterval != null) {
+    timeInterval = lastTimeInterval;
+    alert(timeInterval);
   }
   pauseChange();
 });
