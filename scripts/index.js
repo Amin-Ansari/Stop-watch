@@ -15,10 +15,10 @@ function timeShow() {
 }
 function pauseChange() {
   if (timeInterval) {
-    if (buttons[0].innerHTML == "Start") {
-      buttons[0].innerHTML = "Continue";
+    if (buttons[1].innerHTML == "Stop") {
+      buttons[1].innerHTML = "Continue";
     } else {
-      buttons[0].innerHTML = "Start";
+      buttons[1].innerHTML = "Stop";
     }
   }
 }
@@ -61,11 +61,15 @@ buttons[0].addEventListener("click", function () {
     timeInterval = setInterval(seccondAdd, 1000);
   }
 });
-
 buttons[1].addEventListener("click", function () {
   if (timeInterval) {
-    clearInterval(timeInterval);
+    if (buttons[1].innerHTML == "Continue") {
+      timeInterval = setInterval(seccondAdd, 1000);
+    } else {
+      clearInterval(timeInterval);
+    }
   }
+
   pauseChange();
 });
 buttons[2].addEventListener("click", function () {
