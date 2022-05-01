@@ -64,11 +64,7 @@ buttons[0].addEventListener("click", function () {
 
 buttons[1].addEventListener("click", function () {
   if (timeInterval) {
-    lastTimeInterval = "lol";
     clearInterval(timeInterval);
-  } else if (lastTimeInterval != null) {
-    timeInterval = lastTimeInterval;
-    alert(timeInterval);
   }
   pauseChange();
 });
