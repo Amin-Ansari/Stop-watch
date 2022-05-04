@@ -22,6 +22,11 @@ function pauseChange() {
     }
   }
 }
+function resetPause() {
+  if ((buttons[1].innerHTML = "Continue")) {
+    buttons[1].innerHTML = "Stop";
+  }
+}
 function seccondAdd() {
   num = 0;
   if (timeList[2] < 9) {
@@ -68,12 +73,12 @@ buttons[1].addEventListener("click", function () {
     } else {
       clearInterval(timeInterval);
     }
-  }
 
-  pauseChange();
+    pauseChange();
+  }
 });
 buttons[2].addEventListener("click", function () {
-  pauseChange();
+  resetPause();
   clearInterval(timeInterval);
   timeInterval = undefined;
   for (let i = 0; i < timeList.length; i++) {
