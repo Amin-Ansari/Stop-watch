@@ -73,6 +73,7 @@ buttons[1].addEventListener("click", function () {
   pauseChange();
 });
 buttons[2].addEventListener("click", function () {
+  pauseChange();
   clearInterval(timeInterval);
   timeInterval = undefined;
   for (let i = 0; i < timeList.length; i++) {
